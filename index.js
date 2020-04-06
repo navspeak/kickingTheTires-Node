@@ -10,7 +10,7 @@ server.get('/', (req, res) => {
     res.render('index', {rnd: Math.random()});
 });
 
-server.get('/qrcode?pat', (req, res) => {
+server.get('/qrcode', (req, res) => {
     qr.renderQRCode("https://github.com/navspeak/ngs", res)
 });
 
