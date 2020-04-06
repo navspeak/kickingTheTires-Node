@@ -6,12 +6,9 @@ const { port } = require('./util.js');
 
 server.set('view engine', 'ejs');
 
-server.get('/', (req, res) => {
-    res.render('index', {rnd: Math.random()});
-});
-
-server.get('/qrcode', (req, res) => {
-    qr.renderQRCode("https://github.com/navspeak/ngs", res)
+server.get('/qrcode/:pkg', (req, res) => {
+    const pkg = req.params.pkg;
+    qr.renderQRCode(pkg, res)
 });
 
 server.get('/about', (req, res) => {
