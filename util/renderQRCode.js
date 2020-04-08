@@ -1,6 +1,5 @@
 const fs = require('fs');
 const qrcode = require('qrcode');
-var imageFile = '';
 
 // run().catch(error => console.error(error.stack));
 
