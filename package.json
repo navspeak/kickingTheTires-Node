@@ -2,16 +2,41 @@
   "name": "kickingTheTires-Node",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "lint": "eslint --fix . && echo 'Lint complete.'",
+    "start": "nodemon app.js",
+    "client": "export SERVER_TEST_PORT=4000 || set SERVER_TEST_PORT=4000 && node appClient.js",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "pretest": "echo \"eslint --ignore-path .gitignore .\" && exit 1"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "body-parser": "^1.19.0",
     "ejs": "^3.0.2",
     "express": "^4.17.1",
+    "mongoose": "^5.9.7",
+    "nodemon": "^2.0.3",
+    "puppeteer": "^2.1.1",
     "qrcode": "^1.4.4"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.1.0",
+    "eslint-config-node": "^4.0.0",
+    "eslint-config-prettier": "^6.10.1",
+    "eslint-plugin-import": "^2.20.2",
+    "eslint-plugin-node": "^11.1.0",
+    "eslint-plugin-prettier": "^3.1.2",
+    "prettier": "^2.0.4"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "env": {
+      "NODE_ENV": "dev",
+      "port": 4000
+    }
   }
 }
