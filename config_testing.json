@@ -1,0 +1,4 @@
+{
+  "port" : 3000,
+  "mongodbURL": "mongodb://testUser:password123@ds119565.mlab.com:19565/bookapitest"
+}

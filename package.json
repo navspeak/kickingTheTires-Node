@@ -2,13 +2,12 @@
   "name": "kickingTheTires-Node",
   "version": "1.0.0",
   "description": "",
-  "main": "app.js",
+  "main": "index.js",
   "scripts": {
     "lint": "eslint --fix . && echo 'Lint complete.'",
     "start": "nodemon app.js",
     "client": "export SERVER_TEST_PORT=4000 || set SERVER_TEST_PORT=4000 && node appClient.js",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "pretest": "echo \"eslint --ignore-path .gitignore .\" && exit 1"
+    "test": "mocha tests/**/*Tests.js"
   },
   "keywords": [],
   "author": "",
@@ -30,12 +29,16 @@
     "eslint-plugin-import": "^2.20.2",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^2.0.4"
+    "mocha": "^7.1.1",
+    "prettier": "^2.0.4",
+    "should": "^13.2.3",
+    "sinon": "^9.0.2",
+    "supertest": "^4.0.2"
   },
   "nodemonConfig": {
     "restartable": "rs",
     "env": {
-      "NODE_ENV": "dev",
+      "NODE_ENV": "development",
       "port": 4000
     }
   }

@@ -1,5 +1,13 @@
-
+/*  eslint-disable global-require */
+let configPath;
+if (process.env.NODE_ENV === 'Test') {
+  configPath = '../config_testing.json';
+} else {
+  configPath = '../config_prod.json';
+}
+// eslint-disable-next-line import/no-dynamic-require
+const { port, mongodbURL } = require(configPath);
 module.exports = {
-  port: process.env.PORT || 3000,
-  mongodbURL: 'mongodb://testUser:password123@ds147551.mlab.com:47551/springdb'
+  port,
+  mongodbURL
 };
